@@ -24,4 +24,5 @@
 	xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
   <import>war:/conf/nodetypes/nodetype-configuration.xml</import>
   <import>war:/conf/addon/application-registry-configuration.xml</import>
+  <import>war:/conf/addon/portal-configuration.xml</import>
 </configuration>
