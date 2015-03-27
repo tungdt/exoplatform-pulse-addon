@@ -112,7 +112,9 @@ public class RestForumParticipant implements ResourceContainer{
     if(null==filterBy||filterBy.length()==0){
       return Response.status(Status.BAD_REQUEST).build();
     }
-    LOG.info(1);
+    // Do not get existing data in cache;
+    cleanCache();
+    
     int max = 5;
     try {
       max = Integer.parseInt(maxResult);
@@ -137,6 +139,10 @@ public class RestForumParticipant implements ResourceContainer{
   public Response getForumParticipantByDate(@PathParam("fromDateStr") String fromDateStr,
                                             @PathParam("toDateStr") String toDateStr,
                                             @PathParam("maxResult") String maxResult){
+    
+    // Do not get existing data in cache;
+    cleanCache();
+    
     Date fromDate = new Date();
     Date toDate = new Date();
     fromDate = parseDate(fromDateStr, "dd-MM-yyyy");
